@@ -8,4 +8,4 @@
 
 <p align="center"> <b> 👉🏻 Created to Learn Sentiment Analyzer 👈🏻 <b> </p>
  
-<p align="center"><a href='https://github.com/Amey-Thakur/SENTIMENT-ANALYZER', style='color: greenyellow;'> ✌🏻 Back To Repository ✌🏻</p>
+<p align="center"><a href='https://github.com/Amey-Thakur/ENGINEERING', style='color: greenyellow;'> ✌🏻 Back To Engineering ✌🏻</p>
