@@ -164,18 +164,7 @@ header {
     margin-bottom: 2.5rem;
 }
 
-.authors-badge {
-    display: inline-block;
-    padding: 0.6rem 1.8rem;
-    background: var(--card-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 100px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--accent-blue);
-    letter-spacing: 0.08rem;
-    box-shadow: var(--shadow);
-}
+
 
 /* Analysis containers */
 .analysis-container {
