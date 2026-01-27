@@ -11,9 +11,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="static/style.css">
 
-    <!-- PyScript Assets -->
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <!-- PyScript Stable Assets -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
 
     <py-config>
         packages = ["textblob"]
@@ -29,32 +29,31 @@
                 <div id="progress-bar" class="progress-bar"></div>
             </div>
             <p id="loader-status" class="loader-status">Initializing Neural Core...</p>
-            <button id="bypass-btn" class="bypass-button hidden" onclick="fadeLoader()">Initialize Manually</button>
         </div>
     </div>
 
     <div class="background-radial"></div>
 
-    <div class="container">
+    <div class="container fade-in">
         <!-- Scholarly Header Section -->
-        <header class="fade-in">
+        <header>
             <h1 class="logo-text">Sentiment Analyzer</h1>
             <p class="subtitle">A hybrid NLP engine utilizing rule-based linguistic patterns and neural network
-                classification to identify and quantify sentiment in textual data.</p>
+                classification for precise sentiment quantification.</p>
             <div class="authors-badge">
                 <span>AMEY THAKUR & MEGA SATISH</span>
             </div>
         </header>
 
         <!-- Dynamic Analysis Interface -->
-        <main class="analysis-card fade-in-up">
-            <div class="input-section">
+        <main class="analysis-container">
+            <div class="input-card">
                 <textarea id="user-text" placeholder="Enter textual data for semantic analysis..."
                     class="text-input"></textarea>
-                <button id="analyze-btn" class="pro-button" py-click="handle_analysis()">Initialize Analysis</button>
+                <button id="analyze-btn" class="pro-button" py-click="handle_analysis">Initialize Analysis</button>
             </div>
 
-            <div id="result-overlay" class="result-display hidden">
+            <div id="result-overlay" class="result-card hidden">
                 <div class="result-header">
                     <span class="label">Classification Outcome</span>
                 </div>
@@ -83,91 +82,102 @@
     </div>
 
     <!-- PyScript Logic Integration -->
-    <py-script>
+    <script type="py">
         from textblob import TextBlob
         import js
         import asyncio
 
-        # Update Progress Bar for User Feedback
         async def update_loader(percent, status):
-        js.document.getElementById("progress-bar").style.width = f"{percent}%"
-        js.document.getElementById("loader-status").innerHTML = status
-        await asyncio.sleep(0.05)
+            js.document.getElementById("progress-bar").style.width = f"{percent}%"
+            js.document.getElementById("loader-status").innerHTML = status
+            await asyncio.sleep(0.05)
 
-        async def finalize_loader():
-        try:
-        await update_loader(100, "Inference Engine Standby")
-        await asyncio.sleep(0.4)
-        js.window.fadeLoader()
-        except Exception as e:
-        js.console.error(f"Loader transition error: {str(e)}")
-        js.window.fadeLoader()
+        async def handle_analysis(event):
+            user_text = js.document.getElementById("user-text").value.strip()
+            result_div = js.document.getElementById("result-overlay")
+            output_badge = js.document.getElementById("sentiment-output")
+            meta_p = js.document.getElementById("analysis-meta")
+            spinner = js.document.getElementById("loading-spinner")
 
-        async def handle_analysis():
-        user_text = js.document.getElementById("user-text").value.strip()
-        result_div = js.document.getElementById("result-overlay")
-        output_badge = js.document.getElementById("sentiment-output")
-        meta_p = js.document.getElementById("analysis-meta")
-        spinner = js.document.getElementById("loading-spinner")
+            if not user_text:
+                return
 
-        if not user_text:
-        return
+            result_div.classList.add("hidden")
+            spinner.classList.remove("hidden")
 
-        result_div.classList.add("hidden")
-        spinner.classList.remove("hidden")
+            await asyncio.sleep(0.6)
 
-        await asyncio.sleep(0.5)
+            try:
+                blob = TextBlob(user_text)
+                polarity = blob.sentiment.polarity
+                
+                if polarity < -0.1:
+                    sentiment = "Negative"
+                    color_class = "negative-text"
+                elif polarity > 0.1:
+                    sentiment = "Positive"
+                    color_class = "positive-text"
+                else:
+                    sentiment = "Neutral"
+                    color_class = "neutral-text"
 
-        try:
-        blob = TextBlob(user_text)
-        polarity = blob.sentiment.polarity
+                output_badge.innerHTML = sentiment
+                output_badge.className = f"sentiment-badge {color_class}"
+                meta_p.innerHTML = f"Semantic Polarity Detection: {round(polarity, 4)}"
 
-        if polarity < 0: sentiment="Negative" color_class="negative-text" elif polarity==0: sentiment="Neutral"
-            color_class="neutral-text" else: sentiment="Positive" color_class="positive-text"
-            output_badge.innerHTML=sentiment output_badge.className=f"sentiment-badge {color_class}"
-            meta_p.innerHTML=f"Semantic Polarity Detection: {round(polarity, 4)}" spinner.classList.add("hidden")
-            result_div.classList.remove("hidden") result_div.classList.add("pop-in") except Exception as e:
-            js.console.error(f"Analysis error: {str(e)}") spinner.classList.add("hidden") # Execute Loader Transition on
-            Start asyncio.ensure_future(finalize_loader()) </py-script>
+                spinner.classList.add("hidden")
+                result_div.classList.remove("hidden")
+                result_div.classList.add("pop-in")
+            except Exception as e:
+                js.console.error(f"Analysis error: {str(e)}")
+                spinner.classList.add("hidden")
 
-            <!-- Loader & Safety Logic -->
-            <script>
-                const bar = document.getElementById("progress-bar");
-                const status = document.getElementById("loader-status");
-                const wrapper = document.getElementById("loader-wrapper");
-                const bypass = document.getElementById("bypass-btn");
-                let progress = 0;
-                let isFaded = false;
+        # Automatic Finalization Signal
+        async def init_sequence():
+            await update_loader(100, "Inference Engine Standby")
+            await asyncio.sleep(0.5)
+            js.window.fadeLoader()
 
-                function fadeLoader() {
-                    if (isFaded) return;
-                    isFaded = true;
-                    wrapper.classList.add("fade-out");
-                    clearInterval(loaderInterval);
+        asyncio.ensure_future(init_sequence())
+    </script>
+
+    <!-- Loader & Robustness Logic -->
+    <script>
+        const bar = document.getElementById("progress-bar");
+        const status = document.getElementById("loader-status");
+        const wrapper = document.getElementById("loader-wrapper");
+        let progress = 0;
+        let isFaded = false;
+
+        function fadeLoader() {
+            if (isFaded) return;
+            isFaded = true;
+            wrapper.classList.add("fade-out");
+            clearInterval(loaderInterval);
+        }
+
+        window.fadeLoader = fadeLoader;
+
+        // Visual Progress Simulation
+        const loaderInterval = setInterval(() => {
+            if (!isFaded) {
+                if (progress < 90) {
+                    progress += Math.random() * 3.5;
+                } else if (progress < 99) {
+                    progress += 0.05;
                 }
+                bar.style.width = progress + "%";
+                if (progress > 30 && progress < 60) status.innerHTML = "Synchronizing Corpora...";
+                if (progress > 60 && progress < 90) status.innerHTML = "Loading Linguistic Models...";
+                if (progress >= 90) status.innerHTML = "Optimizing Neural Inference...";
+            }
+        }, 300);
 
-                window.fadeLoader = fadeLoader;
-
-                // Visual Progress Simulation
-                const loaderInterval = setInterval(() => {
-                    if (progress < 90) {
-                        progress += Math.random() * 2;
-                        bar.style.width = progress + "%";
-                        if (progress > 30 && progress < 60) status.innerHTML = "Synchronizing Corpora...";
-                        if (progress > 60) status.innerHTML = "Loading Linguistic Models...";
-                    }
-                }, 300);
-
-                // Safety Timeout: If PyScript takes > 12s, show bypass button
-                setTimeout(() => {
-                    if (!isFaded) {
-                        status.innerHTML = "Initialization is taking longer than expected...";
-                        bypass.classList.remove("hidden");
-                        progress = 95;
-                        bar.style.width = "95%";
-                    }
-                }, 12000);
-            </script>
+        // Safety timeout in case PyScript fails to trigger signal
+        setTimeout(() => {
+            if (!isFaded) fadeLoader();
+        }, 20000);
+    </script>
 </body>
 
 </html>
