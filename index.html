@@ -74,6 +74,7 @@
         from textblob import TextBlob
         from pyodide.ffi import create_proxy
         import js
+        import asyncio
 
         async def handle_analysis():
         user_text = js.document.getElementById("user-text").value.strip()
@@ -89,8 +90,8 @@
         result_div.classList.add("hidden")
         spinner.classList.remove("hidden")
 
-        # Artificial Delay to simulate complex inference (optional, for UX)
-        # await asyncio.sleep(0.5)
+        # Artificial Delay to simulate complex inference
+        await asyncio.sleep(0.5)
 
         try:
         # Perform Semantic Analysis
