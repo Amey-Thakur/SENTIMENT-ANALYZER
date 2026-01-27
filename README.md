@@ -134,6 +134,64 @@ SENTIMENT-ANALYZER/
 
 ---
 
+<!-- QUICK START -->
+<a name="quick-start"></a>
+## Quick Start
+
+### 1. Prerequisites
+- **Python 3.9+**: Required for runtime execution. [Download Python](https://www.python.org/downloads/)
+- **Git**: For version control and cloning. [Download Git](https://git-scm.com/downloads)
+
+> [!WARNING]
+> **Linguistic Asset Acquisition**
+>
+> The analysis engine relies on curated NLTK corpora. Initializing the engine for the first time will trigger a download of these assets (primarily for tokenization and part-of-speech tagging). Ensure a stable network connection during the setup phase to avoid logic synchronization errors.
+
+### 2. Installation & Setup
+
+#### Step 1: Clone the Repository
+Open your terminal and clone the repository:
+```bash
+git clone https://github.com/Amey-Thakur/SENTIMENT-ANALYZER.git
+cd SENTIMENT-ANALYZER
+```
+
+#### Step 2: Configure Virtual Environment
+Prepare an isolated environment to manage dependencies:
+
+**Windows (Command Prompt / PowerShell):**
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
+
+**macOS / Linux (Terminal):**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+#### Step 3: Install Core Dependencies
+Ensure your environment is active, then install the required libraries:
+```bash
+pip install -r "Source Code/requirements.txt"
+```
+
+#### Step 4: Linguistic Model Acquisition
+Synchronize the required corpora for the TextBlob engine:
+```bash
+python -m textblob.download_corpora
+```
+
+### 3. Execution
+Launch the primary terminal-based sentiment engine:
+
+```bash
+python "Source Code/app.py"
+```
+
+---
+
 <a name="usage-guidelines"></a>
 ## Usage Guidelines
 
