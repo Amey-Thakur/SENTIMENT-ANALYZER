@@ -85,6 +85,17 @@ body {
     padding: 60px 20px;
     overflow-x: hidden;
     transition: background-color 0.4s ease, color 0.4s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.text-input {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
 }
 
 .background-radial {

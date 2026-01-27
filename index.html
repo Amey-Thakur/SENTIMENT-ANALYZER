@@ -11,6 +11,10 @@
         rel="stylesheet">
     <link rel="stylesheet" href="static/style.css">
 
+    <!-- Low Level Security Meta Tags -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+
     <!-- PyScript Stable Assets -->
     <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
@@ -247,6 +251,47 @@
         setTimeout(() => {
             if (!isPyScriptReady) fadeLoader();
         }, 20000);
+
+        // --- Low Level Security & Anti-Right Click ---
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        document.onkeydown = function (e) {
+            // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+            if (e.keyCode == 123 ||
+                (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) ||
+                (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+                return false;
+            }
+        };
+
+        // --- Authors Easter Egg ---
+        let cheatCode = "";
+        const targetCode = "mega&amey";
+        document.addEventListener('keydown', (e) => {
+            cheatCode += e.key.toLowerCase();
+            if (cheatCode.includes(targetCode)) {
+                triggerEasterEgg();
+                cheatCode = "";
+            }
+            if (cheatCode.length > 20) cheatCode = cheatCode.substring(1);
+        });
+
+        function triggerEasterEgg() {
+            const authors = document.querySelector('.authors-badge');
+            if (authors) {
+                authors.style.transition = 'all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                authors.style.transform = 'scale(1.5) rotate(360deg)';
+                authors.style.background = 'linear-gradient(135deg, #FFD700, #FFA500)';
+                authors.style.color = '#000';
+
+                setTimeout(() => {
+                    authors.style.transform = 'scale(1) rotate(0deg)';
+                    authors.style.background = '';
+                    authors.style.color = '';
+                }, 3000);
+            }
+            console.log("%c Developed with ❤️ by Amey Thakur & Mega Satish %c", "background: #4d90fe; color: #fff; border-radius: 5px; padding: 5px;", "");
+        }
     </script>
 </body>
 
