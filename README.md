@@ -164,7 +164,7 @@ SENTIMENT-ANALYZER/
 
   <b>System Attribution: Authors</b>
   <br>
-  <i>Professional footer integration featuring verified attribution and clickable repository access.</i>
+  <i>Footer integration featuring verified attribution and clickable repository access.</i>
   <br><br>
   <img src="screenshots/04-footer-section.png" alt="Authors" width="90%">
 </div>
