@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Sentiment Disconnect | Amey & Mega</title>
+
+    <!-- Scholarly Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Play:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon (Emoji-based Brain/Sentiment) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+
+    <style>
+        :root {
+            --bg-dark: #070709;
+            --card-bg: rgba(18, 18, 22, 0.95);
+            --accent-blue: #4d90fe;
+            --accent-indigo: #a162f7;
+            --text-primary: #f0f0f5;
+            --text-secondary: #a0a0b0;
+            --glass-border: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .background-radial {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, rgba(77, 144, 254, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 40px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-code {
+            font-family: 'Play', sans-serif;
+            font-size: 8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .error-code::after {
+            content: "404";
+            position: absolute;
+            left: 2px;
+            top: 0;
+            color: var(--accent-blue);
+            opacity: 0.5;
+            z-index: -1;
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch {
+            0% {
+                transform: translate(0);
+            }
+
+            20% {
+                transform: translate(-3px, 3px);
+            }
+
+            40% {
+                transform: translate(-3px, -3px);
+            }
+
+            60% {
+                transform: translate(3px, 3px);
+            }
+
+            80% {
+                transform: translate(3px, -3px);
+            }
+
+            100% {
+                transform: translate(0);
+            }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-indigo));
+            color: white;
+            text-decoration: none;
+            border-radius: 100px;
+            font-weight: 600;
+            letter-spacing: 0.05rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px -10px var(--accent-blue);
+        }
+
+        .home-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px -12px var(--accent-blue);
+        }
+
+        .authors-footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .authors-footer a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .authors-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-radial"></div>
+
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2>Semantic Disconnect Detected</h2>
+        <p>The neural pathways to this specific resource have become unstable or do not exist in the current linguistic
+            corpus.</p>
+
+        <a href="index.html" class="home-btn">Re-initialize Connection</a>
+
+        <div class="authors-footer">
+            Developed by <a href="https://github.com/Amey-Thakur" target="_blank">Amey Thakur</a> & <a
+                href="https://github.com/msatmod" target="_blank">Mega Satish</a>
+        </div>
+    </div>
+
+    <script>
+        // Security protections (Anti-Right Click)
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) || (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))) {
+                return false;
+            }
+        };
+    </script>
+</body>
+
+</html>
