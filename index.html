@@ -57,7 +57,7 @@
         <header>
             <h1 class="logo-text">Sentiment Analyzer</h1>
             <p class="subtitle">A hybrid NLP engine utilizing rule-based linguistic patterns and neural network
-                classification to identify and quantify sentiment in textual data.</p>
+                classification for precise sentiment quantification.</p>
             <div class="authors-badge">
                 <span>AMEY THAKUR & MEGA SATISH</span>
             </div>
@@ -211,20 +211,19 @@
 
         // Visual Progress Simulation
         const loaderInterval = setInterval(() => {
-            if (!isFaded) {
-                if (progress < 85) {
-                    progress += 0.4 + (Math.random() * 0.3);
-                } else if (progress < 98) {
-                    // Slower but consistent crawl to 98%
-                    progress += 0.04;
-                }
+            if (!isFaded && progress < 100) {
+                // Asymptotic approach: moves fast at first, slows down as it hits 99.5%
+                // ensuring it never "stops" but also never hits 100 until PyScript says so
+                const jump = (99.5 - progress) * 0.03;
+                progress += Math.max(jump, 0.01);
+
                 bar.style.width = progress + "%";
 
-                if (progress > 30 && progress < 60) status.innerHTML = "Synchronizing Corpora...";
-                if (progress > 60 && progress < 90) status.innerHTML = "Loading Linguistic Models...";
-                if (progress >= 90) status.innerHTML = "Optimizing Neural Inference...";
+                if (progress > 15 && progress < 45) status.innerHTML = "Synchronizing Corpora...";
+                if (progress > 45 && progress < 80) status.innerHTML = "Loading Linguistic Models...";
+                if (progress >= 80) status.innerHTML = "Optimizing Neural Inference...";
             }
-        }, 100);
+        }, 50);
 
         // Safety timeout in case PyScript fails to trigger signal
         setTimeout(() => {
