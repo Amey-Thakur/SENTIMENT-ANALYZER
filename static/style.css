@@ -11,10 +11,13 @@
     --neutral: #ffea00;
 }
 
-/* HIDE PYSCRIPT TAGS IMMEDIATELY TO PREVENT LEAKAGE */
+/* HIDE PYSCRIPT TAGS AND ERROR TERMINALS IMMEDIATELY */
 py-script,
 py-config,
-script[type="py"] {
+script[type="py"],
+.py-terminal,
+.pyscript-error,
+#pyscript_loading_splash {
     display: none !important;
 }
 
