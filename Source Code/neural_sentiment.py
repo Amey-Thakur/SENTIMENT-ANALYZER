@@ -12,7 +12,7 @@ from tensorflow import keras
 
 class NeuralSentimentModel:
     """
-    A Scholarly implementation of a Neural Sentiment Classifier.
+    A robust implementation of a Neural Sentiment Classifier.
     
     This architecture is designed for deep semantic inference using:
         1. Word Embeddings (Dimensionality: 16)
@@ -59,7 +59,7 @@ class NeuralSentimentModel:
         return "Positive" if prediction[0] > 0.5 else "Negative"
 
 # ==============================================================================
-# SCHOLARLY NOTE: 
+# ENGINE NOTE: 
 # The above architecture is optimized for large-scale datasets like IMDB.
 # For localized or real-time terminal analysis, the TextBlob-based engine
 # in app.py provides immediate linguistic utility without the need for 

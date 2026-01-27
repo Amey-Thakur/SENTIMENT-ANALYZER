@@ -70,7 +70,7 @@ The classification engine is governed by strict **computational design patterns*
 |---------|-------------|
 | **Dual Engine Core** | Combines **TextBlob Linguistic Analysis** with **Keras Neural Architectures** for comprehensive sentiment detection. |
 | **Real-Time Analysis** | Implements a robust terminal and web interface for immediate classification of textual affective states. |
-| **Academic Clarity** | In-depth, formal, and scholarly comments integrated throughout the codebase for transparent logic study. |
+| **Academic Clarity** | In-depth and detailed comments integrated throughout the codebase for transparent logic study. |
 | **Wasm Architecture** | Efficient **WebAssembly execution** via PyScript and Pyodide for native web accessibility. |
 | **Inference Pipeline** | Asynchronous architecture ensuring **stability** and responsiveness on web clients. |
 | **Visual Feedback** | **Interactive Sentiment Badges** that trigger on analysis events for sensory reward. |
@@ -85,7 +85,7 @@ The classification engine is governed by strict **computational design patterns*
 - **Languages**: Python 3.9+
 - **Logic**: **NLP Pipelines** (Linguistic Heuristics & Neural Inference)
 - **Frameworks**: **TextBlob** & **TensorFlow** (Keras)
-- **UI System**: Premium Scholarly Design (PyScript & Custom CSS)
+- **UI System**: Premium Design (PyScript & Custom CSS)
 - **Deployment**: GitHub Actions (WebAssembly Deployment Pipeline)
 - **Hosting**: GitHub Pages
 
@@ -111,7 +111,7 @@ SENTIMENT-ANALYZER/
 │   └── requirements.txt             # Dependency Manifest
 │
 ├── static/                          # Web Assets
-│   └── style.css                    # Professional Interface Styles
+│   └── style.css                    # Interface Styles
 │
 ├── index.html                       # Web Entrance (PyScript)
 ├── SECURITY.md                      # Security Protocols
@@ -127,7 +127,7 @@ SENTIMENT-ANALYZER/
 ## Results
 
 <div align="center">
-  <b>Main Interface: Scholarly Design</b>
+  <b>Main Interface: Modern Design</b>
   <br>
   <i>Initial system state with premium aesthetics and synchronized brand identity.</i>
   <br><br>
@@ -162,11 +162,11 @@ SENTIMENT-ANALYZER/
   <img src="screenshots/06-positive-result.png" alt="Positive Result" width="90%">
   <br><br><br>
 
-  <b>Scholarly Attribution: Author Credits</b>
+  <b>System Attribution: Authors</b>
   <br>
-  <i>Professional footer integration featuring verified scholarly credits and clickable repository access.</i>
+  <i>Professional footer integration featuring verified attribution and clickable repository access.</i>
   <br><br>
-  <img src="screenshots/04-footer-section.png" alt="Author Credits" width="90%">
+  <img src="screenshots/04-footer-section.png" alt="Authors" width="90%">
 </div>
 
 ---

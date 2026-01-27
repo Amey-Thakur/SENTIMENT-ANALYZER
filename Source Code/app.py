@@ -6,7 +6,7 @@
 # REPOSITORY: https://github.com/Amey-Thakur/SENTIMENT-ANALYZER
 # RELEASE DATE: June 30, 2021
 # LICENSE: MIT License
-# DESCRIPTION: A professionally architected Sentiment Analysis engine utilizing 
+# DESCRIPTION: A robust Sentiment Analysis engine utilizing 
 #              Linguistic Pattern Recognition via the TextBlob framework.
 # ==============================================================================
 
@@ -19,7 +19,7 @@ warnings.filterwarnings("ignore")
 
 class SentimentEngine:
     """
-    A scholarly implementation of a Sentiment Analysis Engine.
+    A robust implementation of a Sentiment Analysis Engine.
     
     This class encapsulates the logic for performing probabilistic sentiment 
     classification on textual data, leveraging the semantic analysis 
@@ -43,7 +43,7 @@ class SentimentEngine:
             text (str): The input string to be analyzed for semantic affect.
 
         Returns:
-            str: A formal classification string representing the sentiment outcome.
+            str: A classification string representing the sentiment outcome.
         """
         if not text.strip():
             return "Neutral (Empty Input)"
@@ -63,7 +63,7 @@ class SentimentEngine:
 def main():
     """
     The primary execution entry point for the Sentiment-Analyzer system.
-    Provides a Scholarly Terminal Interface for recursive text analysis.
+    Provides a Terminal Interface for recursive text analysis.
     """
     engine = SentimentEngine()
     
@@ -90,7 +90,7 @@ def main():
             # Execute classification through the logic engine
             sentiment_result = engine.classify_sentiment(user_input)
             
-            # Display the statistical result with formal clarity
+            # Display the statistical result with clarity
             print(f"| Outcome: {sentiment_result}")
             print("-" * 30)
 
