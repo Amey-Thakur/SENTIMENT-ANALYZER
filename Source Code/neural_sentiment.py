@@ -2,8 +2,8 @@
 # PROJECT: SENTIMENT-ANALYZER
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # DESCRIPTION: Advanced Neural Network Sentiment Classification Logic.
-#              (Adapted from the IMDB Sentiment Analysis Notebook)
-# ==============================================================================
+# RELEASE DATE: June 30, 2021
+# LICENSE: MIT License
 
 import os
 import numpy as np

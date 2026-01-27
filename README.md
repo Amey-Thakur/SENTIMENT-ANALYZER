@@ -133,7 +133,7 @@ Utilize the modular class structures to prototype new sentiment classification t
 
 This repository is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for complete details.
 
-Copyright © 2026 Amey Thakur & Mega Satish
+Copyright © 2021 Amey Thakur & Mega Satish
 
 ---
 

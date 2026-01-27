@@ -4,7 +4,7 @@
 # GITHUB (AMEY): https://github.com/Amey-Thakur
 # GITHUB (MEGA): https://github.com/msatmod
 # REPOSITORY: https://github.com/Amey-Thakur/SENTIMENT-ANALYZER
-# RELEASE DATE: January 26, 2026
+# RELEASE DATE: June 30, 2021
 # LICENSE: MIT License
 # DESCRIPTION: A professionally architected Sentiment Analysis engine utilizing 
 #              Linguistic Pattern Recognition via the TextBlob framework.
