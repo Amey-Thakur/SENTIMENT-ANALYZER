@@ -8,7 +8,7 @@
   [![Technology](https://img.shields.io/badge/Technology-Python%20%7C%20NLP-blueviolet)](https://github.com/Amey-Thakur/SENTIMENT-ANALYZER)
   [![Developed by Amey Thakur and Mega Satish](https://img.shields.io/badge/Developed%20by-Amey%20Thakur%20%26%20Mega%20Satish-blue.svg)](https://github.com/Amey-Thakur/SENTIMENT-ANALYZER)
 
-  A professionally architected Sentiment Analysis engine utilizing Linguistic Pattern Recognition and Advanced Neural Network Classification to quantify affective states in textual data.
+  A hybrid Natural Language Processing engine utilizing rule-based linguistic patterns and neural network classification to accurately identify and quantify sentiment in textual data.
 
   **[Source Code](Source%20Code/)** &nbsp;·&nbsp; **[Technical Specification](docs/SPECIFICATION.md)** &nbsp;·&nbsp; **[Live Demo](https://amey-thakur.github.io/SENTIMENT-ANALYZER/)**
 
@@ -45,7 +45,7 @@
 <a name="overview"></a>
 ## Overview
 
-**Sentiment Analyzer** is a specialized Natural Language Processing (NLP) framework designed to quantify affective states within textual datasets. By translating human linguistics into empirical sentiment scores, this repository provides a foundational bridge between raw text and actionable psychological insights.
+**Sentiment Analyzer** is a hybrid Natural Language Processing (NLP) engine designed to accurately identify and quantify sentiment in textual data utilizing rule-based linguistic patterns and neural network classification. By translating human linguistics into empirical sentiment scores, this repository provides a foundational bridge between raw text and actionable psychological insights.
 
 The repository serves as a digital study into early interactive system architecture, brought into a modern context via WebAssembly and PyScript, enabling high-performance linguistic analysis directly within the browser environment.
 

@@ -2,7 +2,7 @@
 
 ## Architectural Overview
 
-**Sentiment Analyzer** is a dual-engine linguistic simulation designed to demonstrate core sentiment classification mechanics including rule-based Affective Pattern Matching and probabilistic Neural Inference. The application serves as a digital study into Natural Language Processing architecture, brought into a modern context via WebAssembly and PyScript.
+**Sentiment Analyzer** is a hybrid Natural Language Processing (NLP) architecture designed to identify and quantify sentiment in textual data utilizing rule-based linguistic patterns and neural network classification. The application serves as a digital study into NLP logic and inference performance, brought into a modern context via WebAssembly and PyScript.
 
 ### Analysis Logic Flow
 

@@ -2,7 +2,7 @@
     "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
     "@type": "SoftwareSourceCode",
     "name": "Sentiment Analyzer",
-    "description": "A professionally architected Sentiment Analysis engine utilizing Linguistic Pattern Recognition and Advanced Neural Network Classification to quantify affective states in textual data.",
+    "description": "A hybrid Natural Language Processing engine utilizing rule-based linguistic patterns and neural network classification to accurately identify and quantify sentiment in textual data.",
     "identifier": "SENTIMENT-ANALYZER",
     "license": "https://spdx.org/licenses/MIT.html",
     "programmingLanguage": [
