@@ -248,7 +248,7 @@ Special thanks to the **mentors and peers** whose encouragement, discussions, an
 
   <br>
 
-  📊 **[Sentiment Analyzer](https://amey-thakur.github.io/SENTIMENT-ANALYZER)**
+  🧠 **[Sentiment Analyzer](https://amey-thakur.github.io/SENTIMENT-ANALYZER)**
 
   ---
 
