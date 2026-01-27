@@ -161,8 +161,7 @@
 
         # Automatic Finalization Signal
         async def init_sequence():
-            await update_loader(100, "Inference Engine Standby")
-            await asyncio.sleep(0.5)
+            # Signal PyScript is ready, UI will handle hitting 100% smoothly
             js.window.fadeLoader()
 
         asyncio.ensure_future(init_sequence())
@@ -176,6 +175,7 @@
         const themeToggle = document.getElementById("theme-toggle");
         const themeIcon = document.getElementById("theme-icon");
         let progress = 0;
+        let isPyScriptReady = false;
         let isFaded = false;
 
         // Theme Management
@@ -201,24 +201,42 @@
         updateThemeIcon(savedTheme);
 
         function fadeLoader() {
-            if (isFaded) return;
-            isFaded = true;
-            wrapper.classList.add("fade-out");
-            clearInterval(loaderInterval);
+            // Simply mark PyScript as ready; the interval will handle the smooth finish to 100%
+            isPyScriptReady = true;
         }
 
         window.fadeLoader = fadeLoader;
 
         // Visual Progress Simulation
         const loaderInterval = setInterval(() => {
-            if (!isFaded && progress < 100) {
-                // Asymptotic approach: moves fast at first, slows down as it hits 99.5%
-                // ensuring it never "stops" but also never hits 100 until PyScript says so
-                const jump = (99.5 - progress) * 0.03;
-                progress += Math.max(jump, 0.01);
+            if (isFaded) return;
 
-                bar.style.width = progress + "%";
+            if (isPyScriptReady) {
+                // PyScript is ready, fast-track to 100% smoothly
+                progress += (100 - progress) * 0.15 + 0.5;
+                if (progress >= 100) {
+                    progress = 100;
+                    bar.style.width = "100%";
+                    status.innerHTML = "Inference Engine Standby";
 
+                    // Final fade out after brief pause at 100%
+                    setTimeout(() => {
+                        isFaded = true;
+                        wrapper.classList.add("fade-out");
+                        clearInterval(loaderInterval);
+                    }, 400);
+                }
+            } else {
+                // Standard asymptotic crawl while waiting for PyScript
+                if (progress < 99) {
+                    const jump = (99.5 - progress) * 0.03;
+                    progress += Math.max(jump, 0.01);
+                }
+            }
+
+            bar.style.width = progress + "%";
+
+            if (!isPyScriptReady) {
                 if (progress > 15 && progress < 45) status.innerHTML = "Synchronizing Corpora...";
                 if (progress > 45 && progress < 80) status.innerHTML = "Loading Linguistic Models...";
                 if (progress >= 80) status.innerHTML = "Optimizing Neural Inference...";
@@ -227,7 +245,7 @@
 
         // Safety timeout in case PyScript fails to trigger signal
         setTimeout(() => {
-            if (!isFaded) fadeLoader();
+            if (!isPyScriptReady) fadeLoader();
         }, 20000);
     </script>
 </body>
