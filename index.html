@@ -21,6 +21,17 @@
 </head>
 
 <body>
+    <!-- Premium Loading Screen -->
+    <div id="loader-wrapper">
+        <div class="loader-content">
+            <h1 class="loader-logo">Sentiment Analyzer</h1>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <p id="loader-status" class="loader-status">Initializing Neural Core...</p>
+        </div>
+    </div>
+
     <div class="background-radial"></div>
 
     <div class="container">
@@ -77,6 +88,17 @@
         import js
         import asyncio
 
+        # Update Progress Bar for User Feedback
+        async def update_loader(percent, status):
+        js.document.getElementById("progress-bar").style.width = f"{percent}%"
+        js.document.getElementById("loader-status").innerHTML = status
+        await asyncio.sleep(0.1)
+
+        async def finalize_loader():
+        await update_loader(100, "Inference Engine Standby")
+        await asyncio.sleep(0.5)
+        js.document.getElementById("loader-wrapper").classList.add("fade-out")
+
         async def handle_analysis():
         user_text = js.document.getElementById("user-text").value.strip()
         result_div = js.document.getElementById("result-overlay")
@@ -87,26 +109,49 @@
         if not user_text:
         return
 
-        # Visual Feedback: Initialize Loading State
         result_div.classList.add("hidden")
         spinner.classList.remove("hidden")
 
-        # Artificial Delay to simulate complex inference
         await asyncio.sleep(0.5)
 
         try:
-        # Perform Semantic Analysis
         blob = TextBlob(user_text)
         polarity = blob.sentiment.polarity
 
-        # Determine Classification
         if polarity < 0: sentiment="Negative" color_class="negative-text" elif polarity==0: sentiment="Neutral"
-            color_class="neutral-text" else: sentiment="Positive" color_class="positive-text" # Update UI
+            color_class="neutral-text" else: sentiment="Positive" color_class="positive-text"
             output_badge.innerHTML=sentiment output_badge.className=f"sentiment-badge {color_class}"
-            meta_p.innerHTML=f"Semantic Polarity Detection: {round(polarity, 4)}" # Reveal Results
-            spinner.classList.add("hidden") result_div.classList.remove("hidden") result_div.classList.add("pop-in")
-            except Exception as e: js.console.error(f"Analysis error: {str(e)}") spinner.classList.add("hidden")
-            </py-script>
+            meta_p.innerHTML=f"Semantic Polarity Detection: {round(polarity, 4)}" spinner.classList.add("hidden")
+            result_div.classList.remove("hidden") result_div.classList.add("pop-in") except Exception as e:
+            js.console.error(f"Analysis error: {str(e)}") spinner.classList.add("hidden") # Execute Loader Transition on
+            Start asyncio.ensure_future(finalize_loader()) </py-script>
+
+            <!-- Fallback Loader Logic -->
+            <script>
+                // Simple interval to simulate progress until PyScript takes over
+                let progress = 0;
+                const bar = document.getElementById("progress-bar");
+                const status = document.getElementById("loader-status");
+
+                const loaderInterval = setInterval(() => {
+                    if (progress < 90) {
+                        progress += Math.random() * 5;
+                        bar.style.width = progress + "%";
+                        if (progress > 30 && progress < 60) status.innerHTML = "Synchronizing Corpora...";
+                        if (progress > 60) status.innerHTML = "Loading Linguistic Models...";
+                    }
+                }, 200);
+
+                // Clear interval when the wrapper is faded out (by PyScript)
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.target.classList.contains('fade-out')) {
+                            clearInterval(loaderInterval);
+                        }
+                    });
+                });
+                observer.observe(document.getElementById('loader-wrapper'), { attributes: true });
+            </script>
 </body>
 
 </html>

@@ -183,6 +183,13 @@ header {
     margin-top: 2rem;
 }
 
+.spinner div {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 1rem;
+}
+
 .double-bounce1,
 .double-bounce2 {
     width: 40px;
@@ -198,13 +205,6 @@ header {
 
 .double-bounce2 {
     animation-delay: -1.0s;
-}
-
-.spinner div {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 1rem;
 }
 
 @keyframes sk-bounce {
@@ -247,6 +247,89 @@ footer {
 .copyright {
     font-size: 0.8rem;
     opacity: 0.7;
+}
+
+/* Premium Loading Screen */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#loader-wrapper.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    text-align: center;
+    width: 300px;
+}
+
+.loader-logo {
+    font-family: 'Play', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.15rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-indigo));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulsate 2s infinite ease-in-out;
+}
+
+.progress-container {
+    height: 4px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-indigo));
+    box-shadow: 0 0 15px var(--accent-blue);
+    transition: width 0.4s ease;
+}
+
+.loader-status {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+}
+
+@keyframes pulsate {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ensure PyScript default splash is hidden to use ours */
+#pyscript_loading_splash {
+    display: none !important;
 }
 
 /* Utility & Animations */
