@@ -127,31 +127,46 @@ SENTIMENT-ANALYZER/
 ## Results
 
 <div align="center">
+  <b>Main Interface: Scholarly Design</b>
+  <br>
+  <i>Initial system state with premium aesthetics and synchronized brand identity.</i>
+  <br><br>
+  <img src="screenshots/01-landing-page.png" alt="Landing Page" width="90%">
+  <br><br><br>
 
-### Visual Walkthrough
+  <b>Linguistic Input: Textual Injection</b>
+  <br>
+  <i>Real-time textual data injection into the neural processing corridor.</i>
+  <br><br>
+  <img src="screenshots/02-input-stage.png" alt="Input Stage" width="90%">
+  <br><br><br>
 
-#### Interface & Personalization
-![Landing Page](screenshots/01-landing-page.png)
-*Initial system state with premium scholarly aesthetic and synchronized brand identity.*
+  <b>Quantified Polarity: Neutral Outcome</b>
+  <br>
+  <i>Successful classification of neutral affective states with precise polarity detection.</i>
+  <br><br>
+  <img src="screenshots/03-neutral-result.png" alt="Neutral Result" width="90%">
+  <br><br><br>
 
-#### Analysis Pipeline
-![Input Stage](screenshots/02-input-stage.png)
-*Real-time textual data injection into the neural processing corridor.*
+  <b>Complex Logic: Neural Inference</b>
+  <br>
+  <i>Injecting complex linguistic patterns for deep semantic study.</i>
+  <br><br>
+  <img src="screenshots/05-input-example.png" alt="Complex Inference" width="90%">
+  <br><br><br>
 
-![Neutral Result](screenshots/03-neutral-result.png)
-*Quantified sentiment classification with high-fidelity visual feedback.*
+  <b>Quantified Polarity: Positive Outcome</b>
+  <br>
+  <i>Successful classification of positive affective states with high-fidelity visual feedback.</i>
+  <br><br>
+  <img src="screenshots/06-positive-result.png" alt="Positive Result" width="90%">
+  <br><br><br>
 
-#### Example Analysis
-![Input Example](screenshots/05-input-example.png)
-*Injecting complex linguistic patterns for deep neural inference.*
-
-![Positive Result](screenshots/06-positive-result.png)
-*Successful classification of positive affective states with precise polarity detection.*
-
-#### Integrated Authorship
-![Footer Section](screenshots/04-footer-section.png)
-*Professional footer integration featuring verified scholarly credits and clickable repository access.*
-
+  <b>Scholarly Attribution: Author Credits</b>
+  <br>
+  <i>Professional footer integration featuring verified scholarly credits and clickable repository access.</i>
+  <br><br>
+  <img src="screenshots/04-footer-section.png" alt="Author Credits" width="90%">
 </div>
 
 ---
