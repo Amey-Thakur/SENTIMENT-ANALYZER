@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analyzer | Amey & Mega</title>
+
+    <!-- Scholarly Typography & Design Assets -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Play:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+
+    <!-- PyScript Assets -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+    <py-config>
+        packages = ["textblob"]
+    </py-config>
+</head>
+
+<body>
+    <div class="background-radial"></div>
+
+    <div class="container">
+        <!-- Scholarly Header Section -->
+        <header class="fade-in">
+            <h1 class="logo-text">SENTIMENT-ANALYZER</h1>
+            <p class="subtitle">Linguistic Pattern Recognition & Affective Inference Engine</p>
+            <div class="authors-badge">
+                <span>AMEY THAKUR & MEGA SATISH</span>
+            </div>
+        </header>
+
+        <!-- Dynamic Analysis Interface -->
+        <main class="analysis-card fade-in-up">
+            <div class="input-section">
+                <textarea id="user-text" placeholder="Enter textual data for semantic analysis..."
+                    class="text-input"></textarea>
+                <button id="analyze-btn" class="pro-button" py-click="handle_analysis()">Initialize Analysis</button>
+            </div>
+
+            <div id="result-overlay" class="result-display hidden">
+                <div class="result-header">
+                    <span class="label">Classification Outcome</span>
+                </div>
+                <div id="sentiment-output" class="sentiment-badge">Neutral</div>
+                <div class="result-footer">
+                    <p id="analysis-meta">Semantic Polarity Detection: 0.0</p>
+                </div>
+            </div>
+
+            <div id="loading-spinner" class="spinner hidden">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+                <p>Decoding Linguistics...</p>
+            </div>
+        </main>
+
+        <!-- Scholarly Acknowledgments -->
+        <footer class="fade-in">
+            <div class="footer-links">
+                <a href="https://github.com/Amey-Thakur/SENTIMENT-ANALYZER" target="_blank">Repository</a>
+                <span class="separator">|</span>
+                <a href="#about">About This Project</a>
+            </div>
+            <p class="copyright">Copyright © 2021 Amey Thakur & Mega Satish. Licensed under MIT.</p>
+        </footer>
+    </div>
+
+    <!-- PyScript Logic Integration -->
+    <py-script>
+        from textblob import TextBlob
+        from pyodide.ffi import create_proxy
+        import js
+
+        async def handle_analysis():
+        user_text = js.document.getElementById("user-text").value.strip()
+        result_div = js.document.getElementById("result-overlay")
+        output_badge = js.document.getElementById("sentiment-output")
+        meta_p = js.document.getElementById("analysis-meta")
+        spinner = js.document.getElementById("loading-spinner")
+
+        if not user_text:
+        return
+
+        # Visual Feedback: Initialize Loading State
+        result_div.classList.add("hidden")
+        spinner.classList.remove("hidden")
+
+        # Artificial Delay to simulate complex inference (optional, for UX)
+        # await asyncio.sleep(0.5)
+
+        try:
+        # Perform Semantic Analysis
+        blob = TextBlob(user_text)
+        polarity = blob.sentiment.polarity
+
+        # Determine Classification
+        if polarity < 0: sentiment="Negative" color_class="negative-text" elif polarity==0: sentiment="Neutral"
+            color_class="neutral-text" else: sentiment="Positive" color_class="positive-text" # Update UI
+            output_badge.innerHTML=sentiment output_badge.className=f"sentiment-badge {color_class}"
+            meta_p.innerHTML=f"Semantic Polarity Detection: {round(polarity, 4)}" # Reveal Results
+            spinner.classList.add("hidden") result_div.classList.remove("hidden") result_div.classList.add("pop-in")
+            except Exception as e: js.console.error(f"Analysis error: {str(e)}") spinner.classList.add("hidden")
+            </py-script>
+</body>
+
+</html>
