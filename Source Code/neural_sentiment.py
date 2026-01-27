@@ -1,5 +1,5 @@
 # ==============================================================================
-# PROJECT: SENTIMENT-ANALYZER
+# PROJECT: Sentiment Analyzer
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # DESCRIPTION: Advanced Neural Network Sentiment Classification Logic.
 # RELEASE DATE: June 30, 2021

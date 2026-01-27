@@ -1,5 +1,5 @@
 # ==============================================================================
-# PROJECT: SENTIMENT-ANALYZER
+# PROJECT: Sentiment Analyzer
 # AUTHORS: AMEY THAKUR & MEGA SATISH
 # GITHUB (AMEY): https://github.com/Amey-Thakur
 # GITHUB (MEGA): https://github.com/msatmod
@@ -68,7 +68,7 @@ def main():
     engine = SentimentEngine()
     
     print("\n" + "="*80)
-    print(" " * 25 + "SENTIMENT ANALYSIS ENGINE v1.0")
+    print(" " * 25 + "SENTIMENT ANALYZER ENGINE v1.0")
     print(" " * 20 + "Developed by Amey Thakur & Mega Satish")
     print("="*80 + "\n")
     

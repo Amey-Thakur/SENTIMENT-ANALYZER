@@ -2,7 +2,7 @@
 
 <a name="readme-top"></a>
 
-# SENTIMENT-ANALYZER
+# Sentiment Analyzer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-lightgrey)](LICENSE)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
@@ -55,7 +55,7 @@
 
 ## Project Overview
 
-**SENTIMENT-ANALYZER** is a specialized Natural Language Processing (NLP) framework designed to quantify affective states within textual datasets. By translating human linguistics into empirical sentiment scores, this repository provides a foundational bridge between raw text and actionable psychological insights.
+**Sentiment Analyzer** is a specialized Natural Language Processing (NLP) framework designed to quantify affective states within textual datasets. By translating human linguistics into empirical sentiment scores, this repository provides a foundational bridge between raw text and actionable psychological insights.
 
 The repository serves as a digital study into early interactive system architecture, brought into a modern context via WebAssembly and PyScript, enabling high-performance linguistic analysis directly within the browser environment.
 
@@ -212,7 +212,7 @@ Special thanks to the **mentors and peers** whose encouragement, discussions, an
 
 <br>
 
-📊 **[SENTIMENT-ANALYZER](https://amey-thakur.github.io/SENTIMENT-ANALYZER)**
+📊 **[Sentiment Analyzer](https://amey-thakur.github.io/SENTIMENT-ANALYZER)**
 
 ---
 
