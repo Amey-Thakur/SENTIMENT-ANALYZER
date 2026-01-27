@@ -192,35 +192,49 @@ python "Source Code/app.py"
 
 ---
 
+<!-- USAGE GUIDELINES -->
 <a name="usage-guidelines"></a>
 ## Usage Guidelines
 
-### For Students
-Study the codebase to understand the difference between **rule-based NLP (TextBlob)** and **machine learning inference (TensorFlow)**. The detailed comments provide a step-by-step tutorial on building sentiment classifiers from scratch.
+This repository is openly shared to support learning and knowledge exchange across the academic community.
 
-### For Researchers
-Utilize the modular class structures to prototype new sentiment classification theories or integrate the engine into larger data-mining frameworks. The project is designed for high auditability and precise semantic metric extraction.
+**For Students**  
+Use this project as reference material for understanding **Linguistic Pattern Recognition**, **Neural Network Sentiment Classification (Keras)**, and **real-time affective inference**. The source code is available for study to facilitate self-paced learning and exploration of **Python-based NLP pipelines and WebAssembly/PyScript integration**.
+
+**For Educators**  
+This project may serve as a practical lab example or supplementary teaching resource for **Computer Engineering**, **Digital Signal Processing (Linguistic)**, and **Interactive System Architecture** courses. Attribution is appreciated when utilizing content.
+
+**For Researchers**  
+The documentation and architectural approach may provide insights into **academic project structuring**, **cross-platform Wasm deployment**, and **hybrid rule-based/neural linguistic modeling**.
 
 ---
 
+<!-- LICENSE -->
 <a name="license"></a>
 ## License
 
-This repository is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for complete details.
+This repository and all its creative and technical assets are made available under the **MIT License**. See the [LICENSE](LICENSE) file for complete terms.
+
+> [!NOTE]
+> **Summary**: You are free to share and adapt this content for any purpose, even commercially, as long as you provide appropriate attribution to the original authors.
 
 Copyright © 2021 Amey Thakur & Mega Satish
 
 ---
 
+<!-- ABOUT -->
 <a name="about-this-repository"></a>
 ## About This Repository
 
-This repository represents a commitment to engineering excellence and academic transparency. By providing a fixed, stable, and authoritative record of Natural Language Processing implementations, it serves as a reliable reference for the global engineering community.
+**Created & Maintained by**: [Amey Thakur](https://github.com/Amey-Thakur) & [Mega Satish](https://github.com/msatmod)
 
-<a name="acknowledgments"></a>
+This project features **Sentiment Analyzer**, a dual-engine linguistic classification system. It represents a personal exploration into **Python**-based natural language processing and high-performance web-service architecture via **WebAssembly**.
+
+**Connect:** [GitHub](https://github.com/Amey-Thakur) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/amey-thakur) &nbsp;·&nbsp; [ORCID](https://orcid.org/0000-0001-5644-1575)
+
 ### Acknowledgments
 
-Special recognition to **Mega Satish** for her scholarly partnership and exceptional dedication to this project. Her analytical insights and commitment to engineering excellence were pivotal in refining the system’s linguistic logic and professional presentation. This collaboration represents a shared journey in the pursuit of Natural Language Processing mastery.
+Grateful acknowledgment to [**Mega Satish**](https://github.com/msatmod) for her exceptional collaboration and scholarly partnership during the development of this interactive engineering project. Her constant support, technical clarity, and dedication to software quality were instrumental in achieving the system's functional objectives. Learning alongside her was a transformative experience; her thoughtful approach to problem-solving and steady encouragement turned complex requirements into meaningful learning moments. This work reflects the growth and insights gained from our side-by-side academic journey. Thank you, Mega, for everything you shared and taught along the way.
 
 Special thanks to the **mentors and peers** whose encouragement, discussions, and support contributed meaningfully to this learning experience.
 
