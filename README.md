@@ -104,6 +104,18 @@ SENTIMENT-ANALYZER/
 ├── docs/                            # Academic Documentation
 │   └── SPECIFICATION.md             # Technical Architecture
 │
+├── Mega/                            # Attribution Assets
+│   ├── Filly.jpg                    # Companion (Filly)
+│   └── Mega.png                     # Profile Image (Mega Satish)
+│
+├── screenshots/                     # Visual Gallery
+│   ├── 01-landing-page.png
+│   ├── 02-input-stage.png
+│   ├── 03-neutral-result.png
+│   ├── 04-footer-section.png
+│   ├── 05-input-example.png
+│   └── 06-positive-result.png
+│
 ├── Source Code/                     # Primary Application Layer
 │   ├── app.py                       # Terminal Sentiment Engine
 │   ├── neural_sentiment.py          # Neural Network Topology
