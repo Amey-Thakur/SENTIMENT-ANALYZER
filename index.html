@@ -212,17 +212,19 @@
         // Visual Progress Simulation
         const loaderInterval = setInterval(() => {
             if (!isFaded) {
-                if (progress < 90) {
-                    progress += Math.random() * 3.5;
-                } else if (progress < 99) {
-                    progress += 0.05;
+                if (progress < 85) {
+                    progress += 0.4 + (Math.random() * 0.3);
+                } else if (progress < 98) {
+                    // Slower but consistent crawl to 98%
+                    progress += 0.04;
                 }
                 bar.style.width = progress + "%";
+
                 if (progress > 30 && progress < 60) status.innerHTML = "Synchronizing Corpora...";
                 if (progress > 60 && progress < 90) status.innerHTML = "Loading Linguistic Models...";
                 if (progress >= 90) status.innerHTML = "Optimizing Neural Inference...";
             }
-        }, 300);
+        }, 100);
 
         // Safety timeout in case PyScript fails to trigger signal
         setTimeout(() => {
