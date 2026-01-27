@@ -311,6 +311,26 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.bypass-button {
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    border-radius: 50px;
+    color: var(--accent-blue);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bypass-button:hover {
+    background: var(--accent-blue);
+    color: white;
 }
 
 @keyframes pulsate {

@@ -29,6 +29,7 @@
                 <div id="progress-bar" class="progress-bar"></div>
             </div>
             <p id="loader-status" class="loader-status">Initializing Neural Core...</p>
+            <button id="bypass-btn" class="bypass-button hidden" onclick="fadeLoader()">Initialize Manually</button>
         </div>
     </div>
 
@@ -84,7 +85,6 @@
     <!-- PyScript Logic Integration -->
     <py-script>
         from textblob import TextBlob
-        from pyodide.ffi import create_proxy
         import js
         import asyncio
 
@@ -92,12 +92,16 @@
         async def update_loader(percent, status):
         js.document.getElementById("progress-bar").style.width = f"{percent}%"
         js.document.getElementById("loader-status").innerHTML = status
-        await asyncio.sleep(0.1)
+        await asyncio.sleep(0.05)
 
         async def finalize_loader():
+        try:
         await update_loader(100, "Inference Engine Standby")
-        await asyncio.sleep(0.5)
-        js.document.getElementById("loader-wrapper").classList.add("fade-out")
+        await asyncio.sleep(0.4)
+        js.window.fadeLoader()
+        except Exception as e:
+        js.console.error(f"Loader transition error: {str(e)}")
+        js.window.fadeLoader()
 
         async def handle_analysis():
         user_text = js.document.getElementById("user-text").value.strip()
@@ -126,31 +130,43 @@
             js.console.error(f"Analysis error: {str(e)}") spinner.classList.add("hidden") # Execute Loader Transition on
             Start asyncio.ensure_future(finalize_loader()) </py-script>
 
-            <!-- Fallback Loader Logic -->
+            <!-- Loader & Safety Logic -->
             <script>
-                // Simple interval to simulate progress until PyScript takes over
-                let progress = 0;
                 const bar = document.getElementById("progress-bar");
                 const status = document.getElementById("loader-status");
+                const wrapper = document.getElementById("loader-wrapper");
+                const bypass = document.getElementById("bypass-btn");
+                let progress = 0;
+                let isFaded = false;
 
+                function fadeLoader() {
+                    if (isFaded) return;
+                    isFaded = true;
+                    wrapper.classList.add("fade-out");
+                    clearInterval(loaderInterval);
+                }
+
+                window.fadeLoader = fadeLoader;
+
+                // Visual Progress Simulation
                 const loaderInterval = setInterval(() => {
                     if (progress < 90) {
-                        progress += Math.random() * 5;
+                        progress += Math.random() * 2;
                         bar.style.width = progress + "%";
                         if (progress > 30 && progress < 60) status.innerHTML = "Synchronizing Corpora...";
                         if (progress > 60) status.innerHTML = "Loading Linguistic Models...";
                     }
-                }, 200);
+                }, 300);
 
-                // Clear interval when the wrapper is faded out (by PyScript)
-                const observer = new MutationObserver((mutations) => {
-                    mutations.forEach((mutation) => {
-                        if (mutation.target.classList.contains('fade-out')) {
-                            clearInterval(loaderInterval);
-                        }
-                    });
-                });
-                observer.observe(document.getElementById('loader-wrapper'), { attributes: true });
+                // Safety Timeout: If PyScript takes > 12s, show bypass button
+                setTimeout(() => {
+                    if (!isFaded) {
+                        status.innerHTML = "Initialization is taking longer than expected...";
+                        bypass.classList.remove("hidden");
+                        progress = 95;
+                        bar.style.width = "95%";
+                    }
+                }, 12000);
             </script>
 </body>
 
