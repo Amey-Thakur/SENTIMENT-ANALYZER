@@ -128,7 +128,29 @@ SENTIMENT-ANALYZER/
 
 <div align="center">
 
-<!-- Results share images to be populated here -->
+### Visual Walkthrough
+
+#### Interface & Personalization
+![Landing Page](screenshots/01-landing-page.png)
+*Initial system state with premium scholarly aesthetic and synchronized brand identity.*
+
+#### Analysis Pipeline
+![Input Stage](screenshots/02-input-stage.png)
+*Real-time textual data injection into the neural processing corridor.*
+
+![Neutral Result](screenshots/03-neutral-result.png)
+*Quantified sentiment classification with high-fidelity visual feedback.*
+
+#### Example Analysis
+![Input Example](screenshots/05-input-example.png)
+*Injecting complex linguistic patterns for deep neural inference.*
+
+![Positive Result](screenshots/06-positive-result.png)
+*Successful classification of positive affective states with precise polarity detection.*
+
+#### Integrated Authorship
+![Footer Section](screenshots/04-footer-section.png)
+*Professional footer integration featuring verified scholarly credits and clickable repository access.*
 
 </div>
 
