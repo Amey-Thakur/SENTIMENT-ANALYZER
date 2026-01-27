@@ -10,7 +10,9 @@
 [![Developed by Amey Thakur and Mega Satish](https://img.shields.io/badge/Developed%20by-Amey%20Thakur%20%26%20Mega%20Satish-blue.svg)](https://github.com/Amey-Thakur/SENTIMENT-ANALYZER)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-success.svg)](https://amey-thakur.github.io/SENTIMENT-ANALYZER/)
 
-*A professionally architected Sentiment Analysis engine utilizing Linguistic Pattern Recognition and Advanced Neural Network Classification to quantify affective states in textual data.*
+A professionally architected Sentiment Analysis engine utilizing Linguistic Pattern Recognition and Advanced Neural Network Classification to quantify affective states in textual data.
+
+**[Source Code](Source%20Code/)** &nbsp;·&nbsp; **[Python Notebook](Source%20Code/SENTIMENT_ANALYSIS.ipynb)** &nbsp;·&nbsp; **[Live Demo](https://amey-thakur.github.io/SENTIMENT-ANALYZER/)**
 
 ---
 
