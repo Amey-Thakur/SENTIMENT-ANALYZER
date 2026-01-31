@@ -47,7 +47,7 @@
 
 **Sentiment Analyzer** is a hybrid Natural Language Processing (NLP) engine designed to accurately identify and quantify sentiment in textual data utilizing rule-based linguistic patterns and neural network classification. By translating human linguistics into empirical sentiment scores, this repository provides a foundational bridge between raw text and actionable psychological insights.
 
-The repository serves as a digital study into early interactive system architecture, brought into a modern context via WebAssembly and PyScript, enabling high-performance linguistic analysis directly within the browser environment.
+The repository serves as a digital study into interactive system architecture, brought into a modern context via WebAssembly and PyScript, enabling high-performance linguistic analysis directly within the browser environment.
 
 ### Analysis Heuristics
 The classification engine is governed by strict **computational design patterns** ensuring fidelity and responsiveness:
@@ -70,7 +70,7 @@ The classification engine is governed by strict **computational design patterns*
 |---------|-------------|
 | **Dual Engine Core** | Combines **TextBlob Linguistic Analysis** with **Keras Neural Architectures** for comprehensive sentiment detection. |
 | **Real-Time Analysis** | Implements a robust terminal and web interface for immediate classification of textual affective states. |
-| **Academic Clarity** | In-depth and detailed comments integrated throughout the codebase for transparent logic study. |
+| **Structural Clarity** | In-depth and detailed comments integrated throughout the codebase for transparent logic study. |
 | **Wasm Architecture** | Efficient **WebAssembly execution** via PyScript and Pyodide for native web accessibility. |
 | **Inference Pipeline** | Asynchronous architecture ensuring **stability** and responsiveness on web clients. |
 | **Visual Feedback** | **Interactive Sentiment Badges** that trigger on analysis events for sensory reward. |
@@ -85,7 +85,7 @@ The classification engine is governed by strict **computational design patterns*
 - **Languages**: Python 3.9+
 - **Logic**: **NLP Pipelines** (Linguistic Heuristics & Neural Inference)
 - **Frameworks**: **TextBlob** & **TensorFlow** (Keras)
-- **UI System**: Premium Design (PyScript & Custom CSS)
+- **UI System**: Modern Design (PyScript & Custom CSS)
 - **Deployment**: GitHub Actions (WebAssembly Deployment Pipeline)
 - **Hosting**: GitHub Pages
 
@@ -101,7 +101,7 @@ SENTIMENT-ANALYZER/
 ├── .github/ workflows/              # CI/CD Automation
 │   └── deploy.yml                   # GitHub Pages Deployment
 │
-├── docs/                            # Academic Documentation
+├── docs/                            # Project Documentation
 │   └── SPECIFICATION.md             # Technical Architecture
 │
 ├── Mega/                            # Attribution Assets
@@ -127,9 +127,9 @@ SENTIMENT-ANALYZER/
 │
 ├── index.html                       # Web Entrance (PyScript)
 ├── SECURITY.md                      # Security Protocols
-├── CITATION.cff                     # Academic Citation Manifest
+├── CITATION.cff                     # Project Citation Manifest
 ├── codemeta.json                    # Metadata Standard
-├── LICENSE                          # MIT License (Verbatim)
+├── LICENSE                          # MIT License
 └── README.md                        # Project Entrance
 ```
 
@@ -141,7 +141,7 @@ SENTIMENT-ANALYZER/
 <div align="center">
   <b>Main Interface: Modern Design</b>
   <br>
-  <i>Initial system state with premium aesthetics and synchronized brand identity.</i>
+  <i>Initial system state with optimized aesthetics and synchronized brand identity.</i>
   <br><br>
   <img src="screenshots/01-landing-page.png" alt="Landing Page" width="90%">
   <br><br><br>
@@ -245,7 +245,7 @@ python "Source Code/app.py"
 <a name="usage-guidelines"></a>
 ## Usage Guidelines
 
-This repository is openly shared to support learning and knowledge exchange across the academic community.
+This repository is openly shared to support learning and knowledge exchange across the engineering community.
 
 **For Students**  
 Use this project as reference material for understanding **Linguistic Pattern Recognition**, **Neural Network Sentiment Classification (Keras)**, and **real-time affective inference**. The source code is available for study to facilitate self-paced learning and exploration of **Python-based NLP pipelines and WebAssembly/PyScript integration**.
@@ -254,7 +254,7 @@ Use this project as reference material for understanding **Linguistic Pattern Re
 This project may serve as a practical lab example or supplementary teaching resource for **Computer Engineering**, **Digital Signal Processing (Linguistic)**, and **Interactive System Architecture** courses. Attribution is appreciated when utilizing content.
 
 **For Researchers**  
-The documentation and architectural approach may provide insights into **academic project structuring**, **cross-platform Wasm deployment**, and **hybrid rule-based/neural linguistic modeling**.
+The documentation and architectural approach may provide insights into **systematic project structuring**, **cross-platform Wasm deployment**, and **hybrid rule-based/neural linguistic modeling**.
 
 ---
 
@@ -283,7 +283,7 @@ This project features **Sentiment Analyzer**, a dual-engine linguistic classific
 
 ### Acknowledgments
 
-Grateful acknowledgment to [**Mega Satish**](https://github.com/msatmod) for her exceptional collaboration and scholarly partnership during the development of this interactive engineering project. Her constant support, technical clarity, and dedication to software quality were instrumental in achieving the system's functional objectives. Learning alongside her was a transformative experience; her thoughtful approach to problem-solving and steady encouragement turned complex requirements into meaningful learning moments. This work reflects the growth and insights gained from our side-by-side academic journey. Thank you, Mega, for everything you shared and taught along the way.
+Grateful acknowledgment to [**Mega Satish**](https://github.com/msatmod) for her exceptional collaboration and partnership during the development of this interactive engineering project. Her constant support, technical clarity, and dedication to software quality were instrumental in achieving the system's functional objectives. Learning alongside her was a transformative experience; her thoughtful approach to problem-solving and steady encouragement turned complex requirements into meaningful learning moments. This work reflects the growth and insights gained from our side-by-side journey. Thank you, Mega, for everything you shared and taught along the way.
 
 Special thanks to the **mentors and peers** whose encouragement, discussions, and support contributed meaningfully to this learning experience.
 
