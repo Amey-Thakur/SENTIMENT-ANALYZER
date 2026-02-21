@@ -239,7 +239,15 @@ Launch the primary terminal-based sentiment engine:
 python "Source Code/app.py"
 ```
 
+> [!TIP]
+> ### Interactive Sentiment Simulation | Hybrid NLP Engine
+> 
+> Experience the interactive **Sentiment Analyzer** simulation directly in your browser through the working **GitHub Pages** deployment. This platform features a **Dual-Engine Core** that combines **rule-based heuristics** with **neural classification**, providing a visual demonstration of linguistic polarity detection and real-time affective state quantification.
+>
+> [**Launch Live Demo on GitHub Pages**](https://amey-thakur.github.io/SENTIMENT-ANALYZER/)
+
 ---
+
 
 <!-- USAGE GUIDELINES -->
 <a name="usage-guidelines"></a>
