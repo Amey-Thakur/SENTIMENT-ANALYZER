@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sentiment Analyzer - Social Preview</title>
+<!-- Renders the 1280x640 social preview from this repository's own assets. -->
+</head>
+<body>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:640px;overflow:hidden;font-family:"Segoe UI",system-ui,sans-serif}
+.card{position:relative;width:1280px;height:640px;overflow:hidden;background:#f6f7fb}
+.card:before{content:"";position:absolute;left:-160px;top:-200px;width:620px;height:620px;border-radius:50%;
+  background:radial-gradient(circle,rgba(63,81,235,.13),rgba(63,81,235,0) 66%)}
+.card:after{content:"";position:absolute;right:-140px;bottom:-220px;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(139,58,220,.13),rgba(139,58,220,0) 66%)}
+.left{position:absolute;left:76px;top:0;bottom:0;width:520px;display:flex;flex-direction:column;justify-content:center}
+.k{font-size:13px;font-weight:800;letter-spacing:.20em;color:#6b7280}
+.h1{margin-top:14px;font-size:58px;font-weight:800;line-height:1.02;letter-spacing:-.025em;
+  background:linear-gradient(92deg,#3f51eb 0%,#8b3adc 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.p{margin-top:20px;font-size:17px;color:#5b6472;line-height:1.66;max-width:470px}
+.stack{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+.stack i{font-style:normal;font-size:12.5px;font-weight:600;color:#3f4a5a;background:#fff;
+  border:1px solid #e3e8ef;border-radius:999px;padding:6px 12px}
+.by{margin-top:26px;font-size:16px;font-weight:700;color:#1b2434}
+.by span{display:block;font-size:12px;font-weight:700;letter-spacing:.18em;color:#95a0b0;margin-bottom:7px}
+.app{position:absolute;right:72px;top:50%;transform:translateY(-50%);width:520px}
+.panel{background:#fff;border-radius:18px;padding:24px;box-shadow:0 22px 54px rgba(23,32,58,.13)}
+.ta{background:#f1f3f7;border-radius:12px;padding:18px 20px;font-size:16.5px;color:#38414f;line-height:1.5}
+.btn{margin-top:18px;border-radius:12px;padding:15px 0;text-align:center;font-size:15px;font-weight:800;
+  letter-spacing:.10em;color:#fff;background:linear-gradient(92deg,#2f45e6,#8b3adc)}
+.out{margin-top:18px;background:#fff;border-radius:18px;padding:22px;text-align:center;
+  box-shadow:0 22px 54px rgba(23,32,58,.13)}
+.out .k2{font-size:11.5px;font-weight:800;letter-spacing:.20em;color:#8a94a4}
+.out .v{margin-top:8px;font-size:44px;font-weight:800;color:#12a150;letter-spacing:-.02em;
+  text-shadow:0 0 26px rgba(18,161,80,.28)}
+.out .s{margin-top:6px;font-size:14.5px;color:#6b7482}
+</style>
+<div class="card">
+  <div class="app">
+    <div class="panel">
+      <div class="ta">those who attack space maybe don&rsquo;t realize that space represents hope for so many people.</div>
+      <div class="btn">INITIALIZE ANALYSIS</div>
+    </div>
+    <div class="out">
+      <div class="k2">CLASSIFICATION OUTCOME</div>
+      <div class="v">Positive</div>
+      <div class="s">Semantic Polarity Detection: 0.5</div>
+    </div>
+  </div>
+  <div class="left">
+    <div class="k">NATURAL LANGUAGE PROCESSING</div>
+    <div class="h1">Sentiment<br>Analyzer</div>
+    <div class="p">A hybrid engine: rule based linguistic patterns alongside a neural classifier, reported as one polarity score.</div>
+    <div class="stack"><i>Python</i><i>TextBlob</i><i>Keras</i><i>TensorFlow</i><i>Flask</i></div>
+    <div class="by"><span>BUILT BY</span>Amey Thakur &middot; Mega Satish</div>
+  </div>
+</div>
+</body>
+</html>
