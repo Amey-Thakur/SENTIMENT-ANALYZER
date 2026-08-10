@@ -118,6 +118,14 @@
 
     <!-- PyScript Logic Integration -->
     <script type="py">
+        # Pyodide builds CPython without socket-backed SSL, so http.client has no
+        # HTTPSConnection. NLTK touches it at import time, which aborted the whole
+        # module load. Alias it to the plain connection before importing TextBlob:
+        # nothing here performs network I/O, the attribute only has to exist.
+        import http.client
+        if not hasattr(http.client, "HTTPSConnection"):
+            http.client.HTTPSConnection = http.client.HTTPConnection
+
         from textblob import TextBlob
         import js
         import asyncio
