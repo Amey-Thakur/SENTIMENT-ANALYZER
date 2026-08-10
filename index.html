@@ -54,7 +54,7 @@
             <div class="progress-container">
                 <div id="progress-bar" class="progress-bar"></div>
             </div>
-            <p id="loader-status" class="loader-status">Initializing Neural Core...</p>
+            <p id="loader-status" class="loader-status">Initializing Analysis Engine...</p>
         </div>
     </div>
 
@@ -64,8 +64,8 @@
         <!-- Main Header Section -->
         <header>
             <h1 class="logo-text">Sentiment Analyzer</h1>
-            <p class="subtitle">A hybrid NLP engine utilizing rule-based linguistic patterns and neural network
-                classification for precise sentiment quantification.</p>
+            <p class="subtitle">An NLP engine utilizing rule-based linguistic patterns for precise sentiment
+                quantification.</p>
             <div class="authors-badge">
                 <span>AMEY THAKUR & MEGA SATISH</span>
             </div>
@@ -247,7 +247,7 @@
             if (!isPyScriptReady) {
                 if (progress > 15 && progress < 45) status.innerHTML = "Synchronizing Corpora...";
                 if (progress > 45 && progress < 80) status.innerHTML = "Loading Linguistic Models...";
-                if (progress >= 80) status.innerHTML = "Optimizing Neural Inference...";
+                if (progress >= 80) status.innerHTML = "Loading Linguistic Lexicon...";
             }
         }, 50);
 
@@ -298,7 +298,7 @@
             // Stylized Console Logs
             console.log("%c 🔓 UNLOCKED: AUTHOR ACCESS %c", "background: #a162f7; color: #fff; font-weight: bold; border-radius: 4px; padding: 4px 10px;", "");
             console.log("%c Developed by the visionary minds of Amey Thakur & Mega Satish %c", "color: #4d90fe; font-weight: 600; font-family: 'Outfit', sans-serif;", "");
-            console.log("%c ⚡ Engine: Hybrid Rule-Based & Neural NLP %c", "color: #a0a0b0; font-style: italic;", "");
+            console.log("%c ⚡ Engine: Rule-Based Linguistic NLP %c", "color: #a0a0b0; font-style: italic;", "");
             console.log("%c -------------------------------------------------- %c", "color: rgba(255,255,255,0.1);", "");
             console.log("%c 📡 AMEY GitHub: https://github.com/Amey-Thakur %c", "color: #4d90fe;", "");
             console.log("%c 📡 MEGA GitHub: https://github.com/msatmod %c", "color: #4d90fe;", "");

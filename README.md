@@ -7,7 +7,7 @@
   [![Technology](https://img.shields.io/badge/Technology-Python%20%7C%20NLP-8250DF)](https://github.com/Amey-Thakur/SENTIMENT-ANALYZER)
   [![Developed by Amey Thakur and Mega Satish](https://img.shields.io/badge/Developed%20by-Amey%20Thakur%20%26%20Mega%20Satish-0969DA.svg)](https://github.com/Amey-Thakur/SENTIMENT-ANALYZER)
 
-  A hybrid Natural Language Processing engine utilizing rule-based linguistic patterns and neural network classification to accurately identify and quantify sentiment in textual data.
+  A Natural Language Processing engine utilizing rule-based linguistic patterns to accurately identify and quantify sentiment in textual data.
 
   **[Source Code](Source%20Code/)** &nbsp;·&nbsp; **[Technical Specification](docs/SPECIFICATION.md)** &nbsp;·&nbsp; **[Live Demo](https://amey-thakur.github.io/SENTIMENT-ANALYZER/)**
 
@@ -44,14 +44,14 @@
 <a name="overview"></a>
 ## Overview
 
-**Sentiment Analyzer** is a hybrid Natural Language Processing (NLP) engine designed to accurately identify and quantify sentiment in textual data utilizing rule-based linguistic patterns and neural network classification. By translating human linguistics into empirical sentiment scores, this repository provides a foundational bridge between raw text and actionable psychological insights.
+**Sentiment Analyzer** is a Natural Language Processing (NLP) engine designed to accurately identify and quantify sentiment in textual data utilizing rule-based linguistic patterns. By translating human linguistics into empirical sentiment scores, this repository provides a foundational bridge between raw text and actionable psychological insights.
 
 The repository serves as a digital study into interactive system architecture, brought into a modern context via WebAssembly and PyScript, enabling high-performance linguistic analysis directly within the browser environment.
 
 ### Analysis Heuristics
 The classification engine is governed by strict **computational design patterns** ensuring fidelity and responsiveness:
 *   **Progressive Polarity**: The engine utilizes a linear sentiment multiplier, incrementally scoring lexical tokens against curated corpora to arrive at a global affective state.
-*   **Neural Inference**: Beyond rule-based logic, the system integrates a **TensorFlow-based classifier** that dynamically refines its accuracy over time, simulating an organic learning curve for complex semantic structures.
+*   **Neural Reference Implementation**: A **Keras** classifier architecture is defined separately in `neural_sentiment.py` for study. It is not part of the analysis path and ships without trained weights.
 *   **Zero-Latency Pipeline**: Input handling supports both continuous text streams and batch processing, ensuring **real-time** affective response critical for interactive linguistic study.
 
 > [!TIP]
@@ -67,7 +67,7 @@ The classification engine is governed by strict **computational design patterns*
 
 | Feature | Description |
 |---------|-------------|
-| **Dual Engine Core** | Combines **TextBlob Linguistic Analysis** with **Keras Neural Architectures** for comprehensive sentiment detection. |
+| **Lexicon Engine** | Resolves polarity through **TextBlob Linguistic Analysis**, with a **Keras** architecture included separately for study. |
 | **Real-Time Analysis** | Implements a robust terminal and web interface for immediate classification of textual affective states. |
 | **Structural Clarity** | In-depth and detailed comments integrated throughout the codebase for transparent logic study. |
 | **Wasm Architecture** | Efficient **WebAssembly execution** via PyScript and Pyodide for native web accessibility. |
@@ -82,8 +82,8 @@ The classification engine is governed by strict **computational design patterns*
 
 ### Tech Stack
 - **Languages**: Python 3.9+
-- **Logic**: **NLP Pipelines** (Linguistic Heuristics & Neural Inference)
-- **Frameworks**: **TextBlob** & **TensorFlow** (Keras)
+- **Logic**: **NLP Pipelines** (Linguistic Heuristics)
+- **Frameworks**: **TextBlob**, with **TensorFlow** (Keras) required only by the reference model
 - **UI System**: Modern Design (PyScript & Custom CSS)
 - **Deployment**: GitHub Actions (WebAssembly Deployment Pipeline)
 - **Hosting**: GitHub Pages
@@ -117,7 +117,7 @@ SENTIMENT-ANALYZER/
 │
 ├── Source Code/                     # Primary Application Layer
 │   ├── app.py                       # Terminal Sentiment Engine
-│   ├── neural_sentiment.py          # Neural Network Topology
+│   ├── neural_sentiment.py          # Neural Network Topology (reference only)
 │   ├── SENTIMENT_ANALYSIS.ipynb     # Investigative Notebook
 │   └── requirements.txt             # Dependency Manifest
 │
@@ -147,7 +147,7 @@ SENTIMENT-ANALYZER/
 
   <b>Linguistic Input: Textual Injection</b>
   <br>
-  <i>Real-time textual data injection into the neural processing corridor.</i>
+  <i>Real-time textual data injection into the analysis pipeline.</i>
   <br><br>
   <img src="screenshots/02-input-stage.png" alt="Input Stage" width="90%">
   <br><br><br>
@@ -159,7 +159,7 @@ SENTIMENT-ANALYZER/
   <img src="screenshots/03-neutral-result.png" alt="Neutral Result" width="90%">
   <br><br><br>
 
-  <b>Complex Logic: Neural Inference</b>
+  <b>Complex Logic: Compound Expressions</b>
   <br>
   <i>Injecting complex linguistic patterns for deep semantic study.</i>
   <br><br>
@@ -239,9 +239,9 @@ python "Source Code/app.py"
 ```
 
 > [!TIP]
-> ### Interactive Sentiment Simulation | Hybrid NLP Engine
+> ### Interactive Sentiment Simulation | NLP Engine
 > 
-> Experience the interactive **Sentiment Analyzer** simulation directly in your browser through the working **GitHub Pages** deployment. This platform features a **Dual-Engine Core** that combines **rule-based heuristics** with **neural classification**, providing a visual demonstration of linguistic polarity detection and real-time affective state quantification.
+> Experience the interactive **Sentiment Analyzer** simulation directly in your browser through the working **GitHub Pages** deployment. This platform applies **rule-based heuristics** to resolve linguistic polarity, providing a visual demonstration of polarity detection and real-time affective state quantification.
 >
 > [**Launch Live Demo on GitHub Pages**](https://amey-thakur.github.io/SENTIMENT-ANALYZER/)
 
@@ -255,13 +255,13 @@ python "Source Code/app.py"
 This repository is openly shared to support learning and knowledge exchange across the engineering community.
 
 **For Students**  
-Use this project as reference material for understanding **Linguistic Pattern Recognition**, **Neural Network Sentiment Classification (Keras)**, and **real-time affective inference**. The source code is available for study to facilitate self-paced learning and exploration of **Python-based NLP pipelines and WebAssembly/PyScript integration**.
+Use this project as reference material for understanding **Linguistic Pattern Recognition**, the **Keras** classifier architecture included for study, and **real-time affective inference**. The source code is available for study to facilitate self-paced learning and exploration of **Python-based NLP pipelines and WebAssembly/PyScript integration**.
 
 **For Educators**  
 This project may serve as a practical lab example or supplementary teaching resource for **Computer Engineering**, **Digital Signal Processing (Linguistic)**, and **Interactive System Architecture** courses. Attribution is appreciated when utilizing content.
 
 **For Researchers**  
-The documentation and architectural approach may provide insights into **systematic project structuring**, **cross-platform Wasm deployment**, and **hybrid rule-based/neural linguistic modeling**.
+The documentation and architectural approach may provide insights into **systematic project structuring**, **cross-platform Wasm deployment**, and **rule-based linguistic modeling**.
 
 ---
 
@@ -284,7 +284,7 @@ Copyright © 2021 Amey Thakur & Mega Satish
 
 **Created & Maintained by**: [Amey Thakur](https://github.com/Amey-Thakur) & [Mega Satish](https://github.com/msatmod)
 
-This project features **Sentiment Analyzer**, a dual-engine linguistic classification system. It represents a personal exploration into **Python**-based natural language processing and high-performance web-service architecture via **WebAssembly**.
+This project features **Sentiment Analyzer**, a rule-based linguistic classification system. It represents a personal exploration into **Python**-based natural language processing and high-performance web-service architecture via **WebAssembly**.
 
 **Connect:** [GitHub](https://github.com/Amey-Thakur) &nbsp;·&nbsp; [LinkedIn](https://www.linkedin.com/in/amey-thakur) &nbsp;·&nbsp; [ORCID](https://orcid.org/0000-0001-5644-1575)
 
